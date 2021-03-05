@@ -42,16 +42,16 @@ namespace TodoList
             {
                 MessageBox.Show(ex.Message);
                 Close();
-                throw;
             }
             
-            
+            // подключаем источник инфы
             dgTodoList.ItemsSource = todoDataList;
             todoDataList.ListChanged += TodoList_ListChanged;
         }
 
         private void TodoList_ListChanged(object sender, ListChangedEventArgs e)
         {
+            //  изменения вводтя только при изменения , добавление или удаления строк
             if (e.ListChangedType == ListChangedType.ItemAdded || e.ListChangedType == ListChangedType.ItemDeleted ||
                 e.ListChangedType == ListChangedType.ItemChanged)
             {

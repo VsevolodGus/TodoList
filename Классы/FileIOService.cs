@@ -34,6 +34,7 @@ namespace TodoList.Классы
 
         public void Save_Data(object todoDataList)
         {
+            // записываем  изменнные даннные на жесткий диск 
             using (StreamWriter writer = File.CreateText(PATH))
             {
                 string output = JsonConvert.SerializeObject(todoDataList);
